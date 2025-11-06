@@ -1,7 +1,12 @@
+import React from "react";
 import FlavorSlider from "../components/FlavorSlider";
 import FlavourTitle from "../components/FlavorTitle";
+import { useMediaQuery } from 'react-responsive';
 
-const flavorSection = () => {
+const FlavorSection = () => {
+  
+
+
   return (
     <section className="flavor-section">
       <div className="h-full flex lg:flex-row flex-col items-center relative">
@@ -16,4 +21,4 @@ const flavorSection = () => {
   );
 };
 
-export default flavorSection;
+export default FlavorSection;

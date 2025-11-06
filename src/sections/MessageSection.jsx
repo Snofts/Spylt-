@@ -2,8 +2,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 const MessageSection = () => {
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 425px)" });
+
+
     useGSAP(() =>{
         const firstMsgSplit = SplitText.create('.first-message',{
             type: 'words'
@@ -73,7 +77,7 @@ const MessageSection = () => {
   return (
     <section className="message-content">
       <div className="container mx-auto flex-center py-28 relative">
-        <div className="w-full h-full">
+        <div className={`w-full h-full ${isSmallMobile && "px-5"}`}>
           <div className="msg-wrapper">
             <h1 className="first-message">Stir up your fearless past and</h1>
             <div style={{
@@ -88,8 +92,8 @@ const MessageSection = () => {
             </h1>
           </div>
           <div className="flex-center md:mt-20 mt-10">
-            <div className="max-w-md flex-center px-10 overflow-hidden">
-              <p>
+            <div className={`max-w-md flex-center px-10 overflow-hidden ${isSmallMobile && "max-w-sm"}`}>
+              <p className={`${isSmallMobile && "min-w-sm"}`}>
                 Rev up your rebel spirit and feed the adventure of life with SPYLT, where you’re one chug away from epic nostalgia and fearless fun.
               </p>
             </div>

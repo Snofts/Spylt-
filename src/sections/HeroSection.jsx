@@ -4,6 +4,8 @@ import { SplitText } from "gsap/all"
 import { useMediaQuery } from "react-responsive";
 
 const HeroSecion = () => {
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 425px)" });
+
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
@@ -64,13 +66,13 @@ const HeroSecion = () => {
         }
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
-          <h1 className="hero-title">Freaking Delicious</h1>
+          <h1 className={`hero-title ${isSmallMobile && "text-4xl! translate-y-4"}`}>Freaking Delicious</h1>
           </div>
           <div style={{
             clipPath: 'polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)'
           }} className="hero-text-scroll">
             <div className="hero-subtitle">
-              <h1>Protein + Caffine</h1>
+              <h1 className={`${isSmallMobile && "text-4xl!"}`}>Protein + Caffine</h1>
             </div>
           </div>
 

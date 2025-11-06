@@ -7,6 +7,8 @@ import { useMediaQuery } from "react-responsive";
 const FlavorSlider = () => {
   const sliderRef = useRef();
 
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 425px)" });
+
   const isTablet = useMediaQuery({
     query: "(max-width: 1024px)",
   });
@@ -71,7 +73,7 @@ const FlavorSlider = () => {
           return (
             <div
               key={flavor.name}
-              className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
+              className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}  ${isSmallMobile && "w-[80vw]"}`}
             >
               <img
                 src={`/images/${flavor.color}-bg.svg`}

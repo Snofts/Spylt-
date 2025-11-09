@@ -3,8 +3,12 @@ import ClippathTitle from "../components/ClippathTitle";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import VideoPinSection from "../components/VideoPinSection";
+import { useMediaQuery } from "react-responsive";
 
 const BenefitsSection = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+
     useGSAP(() => {
         const revealTl = gsap.timeline({
             delay: 1,
@@ -59,7 +63,8 @@ const BenefitsSection = () => {
           </div>
         </div>
       </div>
-      <div className="relative overlay-box">
+      <div className={`relative overlay-box`}> 
+        {/* //${isMobile && "static! mx-10"} */}
         <VideoPinSection />
       </div>
     </section>

@@ -2,13 +2,16 @@ import { useRef } from "react";
 import { cards } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 const TestimonialSection = () => {
   const vdRef = useRef([]);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
 
   useGSAP(() => {
     gsap.set(".testimonials-section", {
-      marginTop: "-140vh",
+       marginTop: isMobile ? "-30vh" : isTablet ? "-60vh" : "-140vh",
     });
 
     const tl = gsap.timeline({
@@ -66,7 +69,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="testimonials-section">
+    <section className={`testimonials-section ${isMobile && "mb-55"}`}>
       <div className="absolute size-full flex flex-col items-center pt-[5vw]">
         <h1 className="text-black first-title">What's</h1>
         <h1 className="text-light-brown sec-title">Everyone</h1>

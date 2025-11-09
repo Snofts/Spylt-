@@ -1,8 +1,12 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 
 const ClippathTitle = ({ title, color, bg, className, borderColor }) => {
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 425px)" });
+
+
   return (
-    <div className="general-title">
+    <div className={`general-title ${isSmallMobile && "text-2xl!"}`}>
       <div
         style={{
           clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",

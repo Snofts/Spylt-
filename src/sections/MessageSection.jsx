@@ -92,8 +92,8 @@ const MessageSection = () => {
             </h1>
           </div>
           <div className="flex-center md:mt-20 mt-10">
-            <div className={`max-w-md flex-center px-10 overflow-hidden ${isSmallMobile && "max-w-sm"}`}>
-              <p className={`${isSmallMobile && "min-w-sm"}`}>
+            <div className={`max-w-md flex-center px-10 overflow-hidden ${isSmallMobile && "max-w-sm overflow-auto px-5"}`}>
+              <p className={`${isSmallMobile && "break-words whitespace-normal"}`}>
                 Rev up your rebel spirit and feed the adventure of life with SPYLT, where you’re one chug away from epic nostalgia and fearless fun.
               </p>
             </div>

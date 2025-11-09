@@ -83,15 +83,15 @@ const NutritionSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex md:justify-center items-center translate-y-5">
+        <div className={`flex md:justify-center items-center ${isMobile && "justify-center"} translate-y-5`}>
           <div className="md:max-w-xs max-w-md">
-            <p className="text-lg md:text-right text-balance font-paragraph">
+            <p className={`text-lg md:text-right text-balance ${isMobile && "text-center"} font-paragraph`}>
               Milk contains a wide array of nutrients, including vitamins,
               minerals, and protein, and this is lactose free
             </p>
           </div>
         </div>
-        <div className="nutrition-box">
+        <div className="nutrition-box left-0 right-0 px-5">
             <div className="list-wrapper">
                 {
                     lists.map((nutrient, index) => (
